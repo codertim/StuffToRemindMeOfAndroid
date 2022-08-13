@@ -132,6 +132,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    public void clearReminders()
+    {
+        reminders.clear();
+        setupLayout(ll);
+    }
 
 
     private void setupLayout(LinearLayout ll) {
@@ -143,16 +148,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // ll.setBackgroundColor(getResources().getColor(R.color.main_background));
         ll.setBackgroundResource(R.drawable.drawable_gradient_background);
 
-        // button for new reminder
+        // layout for buttons
         LinearLayout.LayoutParams buttonLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         buttonLayoutParams.setMargins(100, 20, 100, 2);
+
+        // button for new reminder
         Button newReminderButton = new Button(this);
+        newReminderButton.setTag("new-reminder-button");
         newReminderButton.setText(getResources().getText(R.string.new_button_label));
         newReminderButton.setTextColor(getResources().getColor(R.color.button_font));   // set button font color same as app background
         newReminderButton.setOnClickListener(this);
         newReminderButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16.0f);
         ll.addView(newReminderButton, buttonLayoutParams);
 
+        // button to clear reminders
+        Button clearButton = new Button(this);
+        clearButton.setTag("clear-button");
+        clearButton.setText(R.string.clear_button_label);
+        clearButton.setTextColor(getResources().getColor(R.color.button_font));   // set button font color same as app background
+        clearButton.setOnClickListener(this);
+        clearButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16.0f);
+        ll.addView(clearButton, buttonLayoutParams);
 
 
         // text
@@ -298,6 +314,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(startMain);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
@@ -322,8 +339,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClick(View v) {
-        Log.d("MainActivity", "onClick v.getId() = " + v.getId());
-        askUserForNewReminder();
+        Log.d("MainActivity", "onClick v.getId() = " + v.getId() + " - tag: " + v.getTag());
+        String btnTag = (String) v.getTag();
+
+        if (btnTag.equals("new-reminder-button"))
+        {
+            askUserForNewReminder();
+        }
+        else if (btnTag.equals("clear-button")) {
+            clearReminders();
+        }
     }
 
     @Override

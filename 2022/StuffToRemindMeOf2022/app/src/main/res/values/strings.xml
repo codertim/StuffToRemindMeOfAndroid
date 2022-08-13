@@ -29,7 +29,9 @@
     <string name="min_choice9">120</string>
     <string name="min_choice10">180</string>
 
+    <string name="clear_button_label">Clear</string>
     <string name="new_button_label">New</string>
+
     <string name="settings_title">My Settings</string>
 
     <string name="vibrate_title">Vibrate</string>
