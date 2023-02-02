@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ///binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         ///setContentView(binding.getRoot());
-        setupLayout(ll);
+        setupLayout();
 
         ///setSupportActionBar(binding.toolbar);  TODO: see if this needed since deprecation
 
@@ -135,11 +135,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void clearReminders()
     {
         reminders.clear();
-        setupLayout(ll);
+        setupLayout();
     }
 
 
-    private void setupLayout(LinearLayout ll) {
+    private void setupLayout() {
         //ll = null;
         ll = new LinearLayout(this);
 
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // ll.refreshDrawableState();
 
 
-                setupLayout(ll);
+                setupLayout();
 
                 dialog.cancel();
 
