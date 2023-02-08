@@ -37,6 +37,7 @@ import com.example.stufftoremindmeof2022.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -150,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // layout for buttons
         LinearLayout.LayoutParams buttonLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        buttonLayoutParams.setMargins(100, 20, 100, 2);
+        buttonLayoutParams.setMargins(200, 20, 200, 50);
 
         // button for new reminder
         Button newReminderButton = new Button(this);
