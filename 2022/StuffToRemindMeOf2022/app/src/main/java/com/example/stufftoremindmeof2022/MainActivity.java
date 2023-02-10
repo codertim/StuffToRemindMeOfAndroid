@@ -73,6 +73,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editor.commit();
 
 
+        if (savedInstanceState != null) {
+            String bundle1 = savedInstanceState.getString("bundleTest1");
+            Log.d("MainActivity#onCreate", "##### bundle string loaded:" + bundle1);
+        } else {
+            Log.d("MainActivity#onCreate", "##### bundle empty");
+        }
+
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         ///binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
@@ -377,5 +385,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return true;
         }
         return false;
+    }
+
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        Log.d("MainActivity#onSaveInstanceState", "##### saving instance state - starting");
+        savedInstanceState.putString("bundleTest1", "testing testing");
+    }
+
+    protected void onStop() {
+        super.onStop();
+        Log.d("MainActivity#onStop", "##### onStop starting ...");
+    }
+
+    protected void onStart() {
+        super.onStart();
+        Log.d("MainActivity#onStart", "##### onStart starting ...");
+    }
+
+    protected void onResume() {
+        super.onResume();
+        Log.d("MainActivity#onResume", "##### onResume starting ...");
+    }
+
+    protected void onPause() {
+        super.onPause();
+        Log.d("MainActivity#onPause", "##### onPause starting ...");
     }
 }
