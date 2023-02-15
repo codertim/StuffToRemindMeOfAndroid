@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // layout for buttons
         LinearLayout.LayoutParams buttonLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        buttonLayoutParams.setMargins(200, 20, 200, 50);
+        buttonLayoutParams.setMargins(200, 40, 200, 20);
 
         // button for new reminder
         Button newReminderButton = new Button(this);
