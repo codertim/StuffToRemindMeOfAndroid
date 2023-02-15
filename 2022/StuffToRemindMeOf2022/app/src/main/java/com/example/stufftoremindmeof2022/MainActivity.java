@@ -177,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clearButton.setTextColor(getResources().getColor(R.color.button_font));   // set button font color same as app background
         clearButton.setOnClickListener(this);
         clearButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16.0f);
+        //buttonLayoutParams.weight = 1;
         ll.addView(clearButton, buttonLayoutParams);
 
 
