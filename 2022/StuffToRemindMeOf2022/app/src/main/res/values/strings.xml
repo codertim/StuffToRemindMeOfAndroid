@@ -18,6 +18,7 @@
     <string name="dialog_ok">OK</string>
     <string name="edit_text_placeholder"></string>
     <string name="hello_world">Hello world!</string>
+    <string name="message_hint">Message</string>
     <string name="min_choice1">1</string>
     <string name="min_choice2">5</string>
     <string name="min_choice3">10</string>
@@ -28,12 +29,9 @@
     <string name="min_choice8">90</string>
     <string name="min_choice9">120</string>
     <string name="min_choice10">180</string>
-
     <string name="clear_button_label">Clear</string>
     <string name="new_button_label">New</string>
-
     <string name="settings_title">My Settings</string>
-
     <string name="vibrate_title">Vibrate</string>
     <string name="vibrate_summary">Trigger vibrate when reminder is due</string>
 
